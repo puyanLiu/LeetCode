@@ -25,8 +25,8 @@ var merge = function(nums1, m, nums2, n) {
     if (i2 == n) {
       break;
     }
-    if ((nums2[i2] > nums1[i] && nums2[i2] <= nums1[i + 1])
-    || (nums2[i2] > nums1[i] && nums1[i] > nums1[i + 1])) {
+    if ((nums2[i2] >= nums1[i] && nums2[i2] < nums1[i + 1])
+    || (nums2[i2] >= nums1[i] && i >= m + i2 - 1)) {
       nums1.pop();
       nums1.splice(i + 1, 0, nums2[i2]);
       i2++;

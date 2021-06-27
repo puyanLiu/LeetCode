@@ -40,12 +40,12 @@ class BinaryHeap {
     // 下沉调整
     downAdjust(downIndex) {
         let compareIndex = downIndex;
-        while (compareIndex < this.data.length - 1) {
+        while (compareIndex < (this.data.length - 1) / 2) {
             // 左节点
             let leftChildIndex = this.leftChildIndex(compareIndex);
             // 右节点
             let rightChildIndex = this.rightChildIndex(compareIndex);
-            // 如果左右字数相同，调整左子树
+            // 如果左右子树相同，调整左子树
             let maxIndex = this.data[leftChildIndex] >= this.data[rightChildIndex] ? leftChildIndex : rightChildIndex;
             // 跟左、右节点中最大值比较，如果大于孩子节点，就交换位置
             if (this.data[compareIndex] < this.data[maxIndex]) {
